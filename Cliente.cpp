@@ -4,7 +4,7 @@
  * 
  * Created on 26 de Setembro de 2012, 15:47
  */
-//comentário andre
+//tirei comentário do andré - testando o mesclar
 #include "Cliente.h"
 
 
