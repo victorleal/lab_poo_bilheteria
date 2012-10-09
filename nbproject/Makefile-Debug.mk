@@ -34,7 +34,17 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/main.o
+	${OBJECTDIR}/Pagamento.o \
+	${OBJECTDIR}/FileHandler.o \
+	${OBJECTDIR}/main.o \
+	${OBJECTDIR}/Bilhete.o \
+	${OBJECTDIR}/PagamentoCartao.o \
+	${OBJECTDIR}/FormaPagamento.o \
+	${OBJECTDIR}/Cliente.o \
+	${OBJECTDIR}/PagamentoBoleto.o \
+	${OBJECTDIR}/Espetaculo.o \
+	${OBJECTDIR}/TypeConverter.o \
+	${OBJECTDIR}/PersistentObject.o
 
 
 # C Compiler Flags
@@ -61,10 +71,60 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/c_mais_mais.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/c_mais_mais ${OBJECTFILES} ${LDLIBSOPTIONS} 
 
+${OBJECTDIR}/Pagamento.o: Pagamento.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/Pagamento.o Pagamento.cpp
+
+${OBJECTDIR}/FileHandler.o: FileHandler.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/FileHandler.o FileHandler.cpp
+
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.cpp
+
+${OBJECTDIR}/Bilhete.o: Bilhete.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/Bilhete.o Bilhete.cpp
+
+${OBJECTDIR}/PagamentoCartao.o: PagamentoCartao.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/PagamentoCartao.o PagamentoCartao.cpp
+
+${OBJECTDIR}/FormaPagamento.o: FormaPagamento.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/FormaPagamento.o FormaPagamento.cpp
+
+${OBJECTDIR}/Cliente.o: Cliente.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/Cliente.o Cliente.cpp
+
+${OBJECTDIR}/PagamentoBoleto.o: PagamentoBoleto.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/PagamentoBoleto.o PagamentoBoleto.cpp
+
+${OBJECTDIR}/Espetaculo.o: Espetaculo.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/Espetaculo.o Espetaculo.cpp
+
+${OBJECTDIR}/TypeConverter.o: TypeConverter.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/TypeConverter.o TypeConverter.cpp
+
+${OBJECTDIR}/PersistentObject.o: PersistentObject.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/PersistentObject.o PersistentObject.cpp
 
 # Subprojects
 .build-subprojects:

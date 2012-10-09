@@ -10,9 +10,6 @@
 
 #include "FormaPagamento.h"
 
-
-using namespace std;
-
 class PagamentoCartao : public FormaPagamento{
 private:
     string bandeira;

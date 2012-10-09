@@ -8,7 +8,37 @@
 #ifndef ESPETACULO_H
 #define	ESPETACULO_H
 
-class Espetaculo{
+#include "PersistentObject.h"
+#include <time.h>
+
+class Espetaculo : public PersistentObject{
+    
+private:
+    time_t dataHorario;
+    string descricao;
+    string diretor;
+    string elenco;
+    float precoBilhete;
+    string titulo;
+    
+protected:
+    string getClassName();
+    void serialize();
+    void unserialize();
+    
+public:
+    time_t getDataHorario();
+    string getDescricao();
+    string getDiretor();
+    string getElenco();
+    float getPrecoBilhete();
+    string getTitulo();
+    void setDataHorario(time_t);
+    void setDescricao(string);
+    void setDiretor(string);
+    void setElenco(string);
+    void setPrecoBilhete(float);
+    void setTitulo(string);
     
 };
 

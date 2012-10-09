@@ -4,20 +4,30 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Arquivos de Cabeçalho"
                    projectFiles="true">
-      <itemPath>Bilhete_1.h</itemPath>
-      <itemPath>Cliente_1.h</itemPath>
+      <itemPath>Bilhete.h</itemPath>
+      <itemPath>Cliente.h</itemPath>
       <itemPath>Espetaculo.h</itemPath>
       <itemPath>FileHandler.h</itemPath>
       <itemPath>FormaPagamento.h</itemPath>
       <itemPath>Pagamento.h</itemPath>
       <itemPath>PagamentoBoleto.h</itemPath>
       <itemPath>PagamentoCartao.h</itemPath>
-      <itemPath>PersistentObject_1.h</itemPath>
+      <itemPath>PersistentObject.h</itemPath>
       <itemPath>TypeConverter.h</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Arquivos de Código-Fonte"
                    projectFiles="true">
+      <itemPath>Bilhete.cpp</itemPath>
+      <itemPath>Cliente.cpp</itemPath>
+      <itemPath>Espetaculo.cpp</itemPath>
+      <itemPath>FileHandler.cpp</itemPath>
+      <itemPath>FormaPagamento.cpp</itemPath>
+      <itemPath>Pagamento.cpp</itemPath>
+      <itemPath>PagamentoBoleto.cpp</itemPath>
+      <itemPath>PagamentoCartao.cpp</itemPath>
+      <itemPath>PersistentObject.cpp</itemPath>
+      <itemPath>TypeConverter.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"

@@ -10,14 +10,12 @@
 
 #include "PersistentObject.h"
 
-
-using namespace std;
-
 class FormaPagamento : public PersistentObject{
+    
 protected:
     string getClassName();
     void serialize();
-    void showDetailsFormaPagamento();
+    virtual void showDetailsFormaPagamento();
     void unserialize();
 };
 
