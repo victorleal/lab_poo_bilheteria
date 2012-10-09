@@ -2,22 +2,14 @@
  * File:   Cliente.h
  * Author: victorleal
  *
- * Created on 26 de Setembro de 2012, 15:47
+ * Created on 8 de Outubro de 2012, 20:32
  */
-//mesclando de novo
+
 #ifndef CLIENTE_H
 #define	CLIENTE_H
 
-#include <iostream>
-#include <math.h>
-
-class Cliente {
-public:
-    Cliente();
-    Cliente(const Cliente& orig);
-    virtual ~Cliente();
-private:
-
+class Cliente{
+    
 };
 
 #endif	/* CLIENTE_H */

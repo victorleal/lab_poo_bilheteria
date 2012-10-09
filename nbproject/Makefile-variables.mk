@@ -7,21 +7,21 @@ CND_BASEDIR=`pwd`
 CND_BUILDDIR=build
 CND_DISTDIR=dist
 # Debug configuration
-CND_PLATFORM_Debug=GNU-Linux-x86
-CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-Linux-x86
-CND_ARTIFACT_NAME_Debug=projeto1
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux-x86/projeto1
-CND_PACKAGE_DIR_Debug=dist/Debug/GNU-Linux-x86/package
-CND_PACKAGE_NAME_Debug=projeto1.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux-x86/package/projeto1.tar
+CND_PLATFORM_Debug=Cygwin-Windows
+CND_ARTIFACT_DIR_Debug=dist/Debug/Cygwin-Windows
+CND_ARTIFACT_NAME_Debug=c_mais_mais
+CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin-Windows/c_mais_mais
+CND_PACKAGE_DIR_Debug=dist/Debug/Cygwin-Windows/package
+CND_PACKAGE_NAME_Debug=cmaismais.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin-Windows/package/cmaismais.tar
 # Release configuration
-CND_PLATFORM_Release=GNU-Linux-x86
-CND_ARTIFACT_DIR_Release=dist/Release/GNU-Linux-x86
+CND_PLATFORM_Release=Cygwin-Windows
+CND_ARTIFACT_DIR_Release=dist/Release/Cygwin-Windows
 CND_ARTIFACT_NAME_Release=projeto1
-CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux-x86/projeto1
-CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux-x86/package
+CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/projeto1
+CND_PACKAGE_DIR_Release=dist/Release/Cygwin-Windows/package
 CND_PACKAGE_NAME_Release=projeto1.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux-x86/package/projeto1.tar
+CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/projeto1.tar
 #
 # include compiler specific variables
 #

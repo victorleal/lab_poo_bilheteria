@@ -1,120 +1,42 @@
 /* 
  * File:   PersistentObject.h
- * Author: victorleal
+ * Author: PC
  *
- * Created on 26 de Setembro de 2012, 15:30
+ * Created on 8 de Outubro de 2012, 20:32
  */
 
 #ifndef PERSISTENTOBJECT_H
 #define	PERSISTENTOBJECT_H
 
-#ifdef	__cplusplus
-extern "C" {
-#endif
+using namespace std;
 
-
-
-
-#ifdef	__cplusplus
-}
-#endif
-
-#endif	/* PERSISTENTOBJECT_H */
-#include <iostream>;
-
-class PersistentObject
-{
+class PersistentObject{
+    
 private:
     int id;
+    int removeFile();
+    void writeFile();
     
-    int RemoveFile()
-    {
-        ;
-    }
-    
-    void WriteFile()
-    {
-        ;
-    }
-    
-public: 
+public:
     string SEP;
+    void create();
+    void deleting();
+    string getField(int);
+    string getFileName();
+    int getId();
+    void read();
+    void read(int);
+    void setId(int);
+    virtual void show();
+    void update();
     
-    void Create()
-    {
-        ;
-    }
-    
-    void Delete()
-    {
-        ;
-    }
-    
-    string GetField(int)
-    {
-        ;
-    }
-    
-    string GetFileName()
-    {
-        ;
-    }
-    
-    int GetId()
-    {
-        ;
-    }
-    
-    void Read()
-    {
-        ;
-    }
-    
-    void Read(int)
-    {
-        ;
-    }
-    
-    void SetId(int)
-    {
-        ;
-    }
-    
-    void Show()
-    {
-        ;
-    }
-    
-    void Update()
-    {
-        ;
-    }
-    
-   
 protected:
     string serializedObject;
-    
-    string GetClassName()
-    {
-        ;
-    }
-    
-    void resetSerialized()
-    {
-        ;
-    }
-        
-    void Serialize ()
-    {
-        ;
-    }
-    
-    void Unserialized ()
-    {
-        ;
-    }
-
-    
-    
-    
+    virtual string getClassName();
+    void resetSerialized();     
+    virtual void serialize();
+    virtual void unserialize();
 };
+
+#endif	/* PERSISTENTOBJECT_H */
+

@@ -1,8 +1,8 @@
 /* 
  * File:   main.cpp
- * Author: victorleal
+ * Author: PC
  *
- * Created on 26 de Setembro de 2012, 15:13
+ * Created on 8 de Outubro de 2012, 20:31
  */
 
 #include <cstdlib>
