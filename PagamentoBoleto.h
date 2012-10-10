@@ -25,8 +25,8 @@ public:
     int getCodigoTipoPagamento();
     string getDescricaoTipoPagamento();
     long getNumeroBoleto();
-    void setBancoResponsavel();
-    void setNumeroBoleto();
+    void setBancoResponsavel(string);
+    void setNumeroBoleto(long);
 
 };
 

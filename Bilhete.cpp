@@ -8,47 +8,47 @@
 //Implementar métodos
 
 #include "Bilhete.h"
+#include "Espetaculo.h"
 
-string Bilhete::getClassName(){
-    
+string Bilhete::getClassName() {
+
 }
 
-void Bilhete::serialize(){
-    
+void Bilhete::serialize() {
+
 }
 
-void Bilhete::unserialize(){
-    
+void Bilhete::unserialize() {
+
 }
 
-Cliente Bilhete::getCliente(){
-    
+Cliente Bilhete::getCliente() {
+    return this->cliente;
 }
 
-string Bilhete::getCodigoBilhete(){
-    
+string Bilhete::getCodigoBilhete() {
+    return this->codigoBilhete;
 }
 
-Espetaculo Bilhete::getEspetaculo(){
-    
+Espetaculo Bilhete::getEspetaculo() {
+    return this->espetaculo;
 }
 
-Pagamento Bilhete::getPagamento(){
-    
+Pagamento Bilhete::getPagamento() {
+    return this->pagamento;
 }
 
-void Bilhete::setCodigoBilhete(string codigoBilhete){
-    
+void Bilhete::setCodigoBilhete(string codigoBilhete) {
+    this->codigoBilhete = codigoBilhete;
 }
 
-void Bilhete::setEspetaculo(Espetaculo espetaculo){
-    
+void Bilhete::setEspetaculo(Espetaculo espetaculo) {
+    this->espetaculo = espetaculo;
 }
 
-void Bilhete::setPagamento(Pagamento pagamento){
-    
+void Bilhete::setPagamento(Pagamento pagamento) {
+    this->pagamento = pagamento;
 }
 
-void Bilhete::show(){
-    
+void Bilhete::show() {
 }

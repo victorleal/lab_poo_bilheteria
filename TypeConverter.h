@@ -8,9 +8,16 @@
 #ifndef TYPECONVERTER_H
 #define	TYPECONVERTER_H
 
+#include <sstream>
+#include <time.h>
+
 using namespace std;
 
 class TypeConverter{
+    
+private:
+    char buffer[21];
+    struct tm tm;
     
 public:
     string convertFloatToString(float);

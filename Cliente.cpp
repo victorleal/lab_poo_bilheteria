@@ -7,58 +7,58 @@
 
 #include "Cliente.h"
 
-string Cliente::getClassName(){
-    
+string Cliente::getClassName() {
+
 }
 
-void Cliente::serialize(){
-    
+void Cliente::serialize() {
+
 }
 
-void Cliente::unserialize(){
-    
+void Cliente::unserialize() {
+
 }
 
-string Cliente::getCpf(){
-    
+string Cliente::getCpf() {
+    return this->cpf;
 }
 
-string Cliente::getEmail(){
-    
+string Cliente::getEmail() {
+    return this->email;
 }
 
-string Cliente::getEndereco(){
-    
+string Cliente::getEndereco() {
+    return this->endereco;
 }
 
-string Cliente::getNome(){
-    
+string Cliente::getNome() {
+    return this->nome;
 }
 
-string Cliente::getTelefone(){
-    
+string Cliente::getTelefone() {
+    return this->telefone;
 }
 
-void Cliente::setCpf(string){
-    
+void Cliente::setCpf(string cpf) {
+    this->cpf = cpf;
 }
 
-void Cliente::setEmail(string){
-    
+void Cliente::setEmail(string email) {
+    this->email = email;
 }
 
-void Cliente::setEndereco(string){
-    
+void Cliente::setEndereco(string endereco) {
+    this->endereco = endereco;
 }
 
-void Cliente::setNome(string){
-    
+void Cliente::setNome(string nome) {
+    this->nome = nome;
 }
 
-void Cliente::setTelefone(string){
-    
+void Cliente::setTelefone(string telefone) {
+    this->telefone = telefone;
 }
 
-void Cliente::show(){
-    
+void Cliente::show() {
+
 }

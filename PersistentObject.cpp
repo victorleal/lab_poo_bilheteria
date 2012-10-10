@@ -13,16 +13,16 @@ int PersistentObject::removeFile() {
 void PersistentObject::writeFile() {
 }
 
-virtual string PersistentObject::getClassName() {
+ string PersistentObject::getClassName() {
 }
 
 void PersistentObject::resetSerialized() {
 }
 
-virtual void PersistentObject::serialize() {
+void PersistentObject::serialize() {
 }
 
-virtual void PersistentObject::unserialize() {
+void PersistentObject::unserialize() {
 }
 
 void PersistentObject::create() {
@@ -38,6 +38,7 @@ string PersistentObject::getFileName() {
 }
 
 int PersistentObject::getId() {
+    return this->id;
 }
 
 void PersistentObject::read() {
@@ -46,10 +47,11 @@ void PersistentObject::read() {
 void PersistentObject::read(int) {
 }
 
-void PersistentObject::setId(int) {
+void PersistentObject::setId(int id) {
+    this->id = id;
 }
 
-virtual void PersistentObject::show() {
+void PersistentObject::show() {
 }
 
 void PersistentObject::update() {

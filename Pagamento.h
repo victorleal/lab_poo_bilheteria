@@ -11,6 +11,7 @@
 #include <time.h>
 
 #include "PersistentObject.h"
+#include "FormaPagamento.h"
 
 class Pagamento : public PersistentObject {
     

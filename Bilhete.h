@@ -9,6 +9,9 @@
 #define	BILHETE_H
 
 #include "PersistentObject.h"
+#include "Cliente.h"
+#include "Espetaculo.h"
+#include "Pagamento.h"
 
 class Bilhete : public PersistentObject {
     

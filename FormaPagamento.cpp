@@ -15,7 +15,7 @@ void FormaPagamento::serialize() {
 
 }
 
-virtual void FormaPagamento::showDetailsFormaPagamento() {
+void FormaPagamento::showDetailsFormaPagamento() {
 
 }
 

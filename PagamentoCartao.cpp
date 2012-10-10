@@ -17,19 +17,25 @@ void PagamentoCartao::unserialize() {
 }
 
 string PagamentoCartao::getBandeiraCartao() {
+    return this->bandeira;
 }
 
 int PagamentoCartao::getCodigoTipoPagamento() {
+    return this->getCodigoTipoPagamento();
 }
 
 string PagamentoCartao::getDescricaoTipoPagamento() {
+    return this->getDescricaoTipoPagamento();
 }
 
 long PagamentoCartao::getNumeroCartao() {
+    return this->numeroCartao;
 }
 
-void PagamentoCartao::setBandeiraCartao(string) {
+void PagamentoCartao::setBandeiraCartao(string bandeira) {
+    this->bandeira = bandeira;
 }
 
-void PagamentoCartao::setNumeroCartao(long) {
+void PagamentoCartao::setNumeroCartao(long numero) {
+    this->numeroCartao = numero;
 }
