@@ -8,7 +8,7 @@
 #include "Espetaculo.h"
 
 string Espetaculo::getClassName(){
-    
+    return "Espetaculo";
 }
 
 void Espetaculo::serialize(){

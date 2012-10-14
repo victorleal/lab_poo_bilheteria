@@ -12,6 +12,8 @@
 #include <fstream>
 #include <string.h>
 
+#define diretorio "io/"
+
 using namespace std;
 
 class PersistentObject {

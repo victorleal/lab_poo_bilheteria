@@ -8,7 +8,7 @@
 #include "Pagamento.h"
 
 string Pagamento::getClassName(){
-    
+    return "Pagamento";
 }
 
 void Pagamento::serialize() {

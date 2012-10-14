@@ -12,8 +12,11 @@ string Cliente::getClassName() {
 
 }
 
-void Cliente::serialize() {
-
+string Cliente::serialize() {
+    string serialize = this->getNome() + "|" + this->getCpf() + "|";
+    serialize += this->getEndereco() + "|" + this->getTelefone() + "|";
+    serialize += this->getEmail() + "|";
+    return string;
 }
 
 void Cliente::unserialize() {

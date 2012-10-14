@@ -10,15 +10,17 @@
 #include "TypeConverter.h"
 #include "PersistentObject.h"
 #include "Cliente.h"
+#include "Menu.h"
+
+#define diretorio "obj/"
 
 using namespace std;
 
 /*
  * 
  */
-int main(int argc, char** argv) {
- 
-    Cliente c;
-    c.create();
+int main() {
+
+    Menu menu;
 }
 
