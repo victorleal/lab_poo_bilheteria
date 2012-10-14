@@ -11,7 +11,7 @@ string Espetaculo::getClassName(){
     return "Espetaculo";
 }
 
-void Espetaculo::serialize(){
+string Espetaculo::serialize(){
     
 }
 

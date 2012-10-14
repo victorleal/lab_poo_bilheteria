@@ -17,7 +17,6 @@ int FileHandler::fileExists() {
 
 FileHandler::FileHandler(string caminho) {
     this->path = caminho;
-
 }
 
 string FileHandler::getFileName() {

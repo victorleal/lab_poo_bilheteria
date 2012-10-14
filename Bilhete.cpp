@@ -15,7 +15,7 @@ string Bilhete::getClassName() {
     return "Bilhete";
 }
 
-void Bilhete::serialize() {
+string Bilhete::serialize() {
 
 }
 

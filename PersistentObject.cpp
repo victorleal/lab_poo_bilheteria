@@ -14,7 +14,7 @@ int PersistentObject::removeFile() {
 }
 
 void PersistentObject::writeFile() {
-    FileHandler* fh = new FileHandler(diretorio);
+    FileHandler* fh = new FileHandler(this->getClassName());
     fh->setFileName(this->getFileName());
     fh->writeToFile(this->serialize());
 }

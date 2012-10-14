@@ -11,7 +11,7 @@ string Pagamento::getClassName(){
     return "Pagamento";
 }
 
-void Pagamento::serialize() {
+string Pagamento::serialize() {
 
 }
 

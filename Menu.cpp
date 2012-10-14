@@ -6,6 +6,8 @@
  */
 
 #include "Menu.h"
+#include "Espetaculo.h"
+#include "Cliente.h"
 
 Menu::Menu() {
     int opcao = 0;
@@ -64,6 +66,7 @@ void Menu::submenuBilhetes() {
 
 void Menu::submenuEspetaculos() {
     int opcao = 0;
+    Espetaculo e;
     while (opcao != 4) {
         cout << "\n\tEspetaculos";
         cout << "\n1 - Cadastrar";
@@ -76,20 +79,16 @@ void Menu::submenuEspetaculos() {
         
         switch (opcao) {
             case 1:
-                Espetaculo e;
-                e->cadastrar();
+                //e->cadastrar();
                 break;
             case 2:
-                Espetaculo e;
-                e->editar();
+                //e->editar();
                 break;
             case 3:
-                Espetaculo e;
-                e->deletar();
+                //e->deletar();
                 break;
             case 4:
-                Espetaculo e;
-                e->listar();
+                //e->listar();
                 break;
         }
     }
@@ -97,6 +96,7 @@ void Menu::submenuEspetaculos() {
 
 void Menu::submenuClientes() {
     int opcao = 0;
+    Cliente c;
     while (opcao != 4) {
         cout << "\n\tClientes";
         cout << "\n1 - Cadastrar";
@@ -108,20 +108,16 @@ void Menu::submenuClientes() {
         
         switch (opcao) {
             case 1:
-                Cliente c;
-                c->cadastrar();
+                c.cadastrar();
                 break;
             case 2:
-                Cliente c;
-                c->editar();
+                //c->editar();
                 break;
             case 3:
-                Cliente c;
-                c->deletar();
+                //c->deletar();
                 break;
             case 4:
-                Cliente c;
-                c->listar();
+                //c->listar();
                 break;
         }
     }

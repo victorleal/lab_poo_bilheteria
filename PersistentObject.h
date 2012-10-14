@@ -12,8 +12,6 @@
 #include <fstream>
 #include <string.h>
 
-#define diretorio "io/"
-
 using namespace std;
 
 class PersistentObject {
@@ -29,7 +27,7 @@ protected:
     
     virtual string getClassName();
     void resetSerialized();
-    virtual void serialize();
+    virtual string serialize();
     virtual void unserialize();
 
 public:

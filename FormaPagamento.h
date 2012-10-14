@@ -14,7 +14,7 @@ class FormaPagamento : public PersistentObject{
     
 protected:
     string getClassName();
-    void serialize();
+    string serialize();
     virtual void showDetailsFormaPagamento();
     void unserialize();
 };
