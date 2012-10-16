@@ -5,8 +5,6 @@
  * Created on 8 de Outubro de 2012, 23:25
  */
 
-#include <sstream>
-
 #include "PersistentObject.h"
 #include "FileHandler.h"
 
@@ -14,8 +12,7 @@ int PersistentObject::removeFile() {
 }
 
 void PersistentObject::writeFile() {
-    FileHandler* fh = new FileHandler(this->getClassName());
-    fh->setFileName(this->getFileName());
+    FileHandler *fh = new FileHandler(this->getFileName());
     fh->writeToFile(this->serialize());
 }
 
@@ -32,9 +29,9 @@ void PersistentObject::unserialize() {
 }
 
 void PersistentObject::create() {
-    string file = this->getFileName();
     ofstream handler;
-    handler.open(file.c_str());
+    handler.open(this->getFileName().c_str());
+    this->writeFile();
     handler.close();
 }
 
@@ -46,14 +43,10 @@ string PersistentObject::getField(int) {
 
 string PersistentObject::getFileName() {
     string classe(this->getClassName());
+    string underline("_");
+    string id("2");
     string extensao(".txt");
-    
-    stringstream ss;
-    ss << this->getId();
-    
-    string file = classe + "_";
-    file = file + ss.str();
-    file = file + extensao;
+    string file = classe + underline + id + extensao;
     return file;
 }
 

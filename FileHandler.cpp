@@ -11,37 +11,33 @@ int FileHandler::deleteFile() {
 
 }
 
-int FileHandler::fileExists() {
-
+int FileHandler::fileExists(){
+    
 }
 
-FileHandler::FileHandler(string caminho) {
-    this->path = caminho;
+FileHandler::FileHandler(string name){
+    this->setFileName(name);
 }
 
-string FileHandler::getFileName() {
+string FileHandler::getFileName(){
     return this->fileName;
 }
 
-string FileHandler::getFilePath() {
-    return this->path;
+string FileHandler::getFilePath(){
+    
 }
 
-string FileHandler::readFromFile() {
-
+string FileHandler::readFromFile(){
+    
 }
 
-void FileHandler::setFileName(string name) {
+void FileHandler::setFileName(string name){
     this->fileName = name;
 }
 
-void FileHandler::writeToFile(string object) {
-    ofstream file;
-    string name = this->getFilePath() + this->getFileName();
-    file.open(name.c_str());
-    if (file.is_open()) {
-        file << object;
-    }
-    file.close();
-
+void FileHandler::writeToFile(string object){
+    ofstream handler;
+    handler.open(this->getFileName().c_str()); 
+    handler.write(object.c_str(), object.size());
+    handler.close();
 }

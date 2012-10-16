@@ -9,7 +9,7 @@
 #define	CLIENTE_H
 
 #include "PersistentObject.h"
-#include "FileHandler.h"
+#include <sstream>
 
 class Cliente : public PersistentObject{
     
@@ -38,7 +38,7 @@ public:
     void setNome(string);
     void setTelefone(string);
     void show();
-    void cadastrar();
+    void interfaceCreate();
     
 };
 

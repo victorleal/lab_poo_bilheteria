@@ -1,26 +1,19 @@
 /* 
  * File:   main.cpp
- * Author: PC
+ * Author: victorleal
  *
  * Created on 8 de Outubro de 2012, 20:31
  */
 
-#include <cstdlib>
-#include <iostream>
-#include "TypeConverter.h"
-#include "PersistentObject.h"
-#include "Cliente.h"
 #include "Menu.h"
-
-#define diretorio "obj/"
 
 using namespace std;
 
 /*
  * 
  */
-int main() {
-
+int main(int argc, char** argv) {
+ 
     Menu menu;
 }
 

@@ -3,7 +3,6 @@
  * Author: victorleal
  *
  * Created on 8 de Outubro de 2012, 20:31
- * isso
  */
 
 #ifndef BILHETE_H
@@ -28,7 +27,6 @@ protected:
     void unserialize();
 
 public:
-    Bilhete();
     Cliente getCliente();
     string getCodigoBilhete();
     Espetaculo getEspetaculo();

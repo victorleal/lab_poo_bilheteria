@@ -7,6 +7,7 @@
 
 #include "Cliente.h"
 
+
 Cliente::Cliente(){
     this->SEP = "|";
 }
@@ -17,10 +18,18 @@ string Cliente::getClassName() {
 }
 
 string Cliente::serialize() {
-    string serialize = this->getNome() + this->SEP + this->getCpf() + this->SEP;
-    serialize += this->getEndereco() + this->SEP + this->getTelefone() + this->SEP;
-    serialize += this->getEmail() + this->SEP;
-    return serialize;
+    string serialized;
+    //sstream str;
+    //str << this->getId().;
+    serialized = "1" + this->SEP;
+    serialized += this->getNome() + this->SEP;
+    serialized += this->getCpf() + this->SEP;
+    serialized += this->getEndereco() + this->SEP;
+    serialized += this->getTelefone() + this->SEP;
+    serialized += this->getEmail();
+    
+    return serialized;
+
 }
 
 void Cliente::unserialize() {
@@ -71,28 +80,3 @@ void Cliente::show() {
 
 }
 
-void Cliente::cadastrar(){
-    string nome, cpf, email, telefone, endereco;
-    
-    cout << "Digite o nome: ";
-    cin >> nome;
-    this->setNome(nome);
-    cout << "Digite o CPF: ";
-    cin >> cpf;
-    this->setCpf(cpf);
-    cout << "Digite o endereco: ";
-    cin >> endereco;
-    this->setEndereco(endereco);
-    cout << "Digite o e-mail: ";
-    cin >> email;
-    this->setEmail(email);
-    cout << "Digite o telefone: ";
-    cin >> telefone;
-    this->setTelefone(telefone);
-    this->setId(1);
-    
-    this->create();
-    
-    FileHandler *fh = new FileHandler(this->getFileName());
-    fh->writeToFile(this->serialize());
-}

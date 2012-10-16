@@ -1,94 +1,32 @@
 /* 
- * File:   Submenu.cpp
+ * File:   Menu.cpp
  * Author: victorleal
  * 
- * Created on 13 de Outubro de 2012, 21:57
+ * Created on 14 de Outubro de 2012, 22:41
  */
 
 #include "Menu.h"
-#include "Espetaculo.h"
-#include "Cliente.h"
 
 Menu::Menu() {
     int opcao = 0;
-
     while (opcao != 4) {
-        cout << "\n\tSISTEMA CONTROLE ESPETACULOS";
-        cout << "\n1 - Bilhetes";
+        cout << "\n\tSISTEMA DE CONTROLE DE ESPETACULOS";
+        cout << "\n1 - Clientes";
         cout << "\n2 - Espetaculos";
-        cout << "\n3 - Clientes";
+        cout << "\n3 - Bilhetes";
         cout << "\n4 - Sair";
         cout << "\nDigite a opcao desejada: ";
         cin >> opcao;
-
+        
         switch (opcao) {
             case 1:
-                this->submenuBilhetes();
+                this->submenuClientes();
                 break;
             case 2:
                 this->submenuEspetaculos();
                 break;
             case 3:
-                this->submenuClientes();
-                break;
-            case 4:
-                exit(0);
-        }
-    }
-}
-
-void Menu::submenuBilhetes() {
-    int opcao = 0;
-    while (opcao != 4) {
-        cout << "\n\tBilhetes";
-        cout << "\n1 - Cadastrar";
-        cout << "\n2 - Deletar";
-        cout << "\n3 - Atualizar";
-        cout << "\n4 - Voltar";
-        cout << "\nDigite a opcao desejada: ";
-        cin >> opcao;
-        
-        switch (opcao) {
-            case 1:
                 this->submenuBilhetes();
-                break;
-            case 2:
-                this->submenuEspetaculos();
-                break;
-            case 3:
-                this->submenuClientes();
-                break;
-            case 4:
-                exit(0);
-        }
-    }
-}
-
-void Menu::submenuEspetaculos() {
-    int opcao = 0;
-    Espetaculo e;
-    while (opcao != 4) {
-        cout << "\n\tEspetaculos";
-        cout << "\n1 - Cadastrar";
-        cout << "\n3 - Editar";
-        cout << "\n2 - Deletar";
-        cout << "\n3 - Listar";
-        cout << "\n4 - Voltar";
-        cout << "\nDigite a opcao desejada: ";
-        cin >> opcao;
-        
-        switch (opcao) {
-            case 1:
-                //e->cadastrar();
-                break;
-            case 2:
-                //e->editar();
-                break;
-            case 3:
-                //e->deletar();
-                break;
-            case 4:
-                //e->listar();
                 break;
         }
     }
@@ -96,34 +34,94 @@ void Menu::submenuEspetaculos() {
 
 void Menu::submenuClientes() {
     int opcao = 0;
-    Cliente c;
-    while (opcao != 4) {
-        cout << "\n\tClientes";
+    while (opcao != 5) {
+        cout << "\n\tCLIENTES";
         cout << "\n1 - Cadastrar";
-        cout << "\n2 - Deletar";
-        cout << "\n3 - Atualizar";
-        cout << "\n4 - Voltar";
+        cout << "\n2 - Editar";
+        cout << "\n3 - Excluir";
+        cout << "\n4 - Listar";
+        cout << "\n5 - Voltar";
         cout << "\nDigite a opcao desejada: ";
         cin >> opcao;
         
         switch (opcao) {
             case 1:
-                c.cadastrar();
+                i.cadastrarCliente();
                 break;
             case 2:
-                //c->editar();
+                i.editarCliente();
                 break;
             case 3:
-                //c->deletar();
+                i.excluirCliente();
                 break;
             case 4:
-                //c->listar();
+                i.listarCliente();
                 break;
         }
     }
 }
 
+void Menu::submenuEspetaculos() {
+    int opcao = 0;
+    while (opcao != 5) {
+        cout << "\n\tESPETACULOS";
+        cout << "\n1 - Cadastrar";
+        cout << "\n2 - Editar";
+        cout << "\n3 - Excluir";
+        cout << "\n4 - Listar";
+        cout << "\n5 - Voltar";
+        cout << "\nDigite a opcao desejada: ";
+        cin >> opcao;
+        
+        switch (opcao) {
+            case 1:
+                i.cadastrarEspetaculo();
+                break;
+            case 2:
+                i.editarEspetaculo();
+                break;
+            case 3:
+                i.excluirEspetaculo();
+                break;
+            case 4:
+                i.listarEspetaculo();
+                break;
+        }
+    }
+}
+
+void Menu::submenuBilhetes() {
+    int opcao = 0;
+    while (opcao != 5) {
+        cout << "\n\tBILHETES";
+        cout << "\n1 - Cadastrar";
+        cout << "\n2 - Editar";
+        cout << "\n3 - Excluir";
+        cout << "\n4 - Listar";
+        cout << "\n5 - Sair";
+        cout << "\nDigite a opcao desejada: ";
+        cin >> opcao;
+        
+        switch (opcao) {
+            case 1:
+                i.cadastrarBilhete();
+                break;
+            case 2:
+                i.editarBilhete();
+                break;
+            case 3:
+                i.excluirBilhete();
+                break;
+            case 4:
+                i.listarBilhete();
+                break;
+        }
+    }
+}
+
+Menu::Menu(const Menu& orig) {
+}
+
 Menu::~Menu() {
-    delete this;
 }
 

@@ -1,28 +1,30 @@
 /* 
- * File:   Submenu.h
- * Author: Epcom
+ * File:   Menu.h
+ * Author: victorleal
  *
- * Created on 13 de Outubro de 2012, 21:57
+ * Created on 14 de Outubro de 2012, 22:41
  */
 
 #ifndef MENU_H
 #define	MENU_H
 
 #include <iostream>
-#include <stdio.h>
-#include <stdlib.h>
+#include "Interfaces.h"
 
 using namespace std;
 
 class Menu {
 public:
+    Interfaces i;
     Menu();
-    virtual ~Menu();
-    void submenuBilhetes();
-    void submenuEspetaculos();
     void submenuClientes();
+    void submenuEspetaculos();
+    void submenuBilhetes();    
+    Menu(const Menu& orig);
+    virtual ~Menu();
+private:
 
 };
 
-#endif	/* SUBMENU_H */
+#endif	/* MENU_H */
 
