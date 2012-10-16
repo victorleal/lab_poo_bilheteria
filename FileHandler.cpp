@@ -27,7 +27,23 @@ string FileHandler::getFilePath(){
     
 }
 
-string FileHandler::readFromFile(){
+string FileHandler::readFromFile()
+{
+    string conteudo;
+    string name = this->getFilePath() + this->getFileName();
+    fstream fread("name", fstream::out);
+    
+    fread.open(name.c_str());
+        if (fread.is_open()) 
+        {
+                while (!fread.eof() )
+            {
+              getline (fread,conteudo); // como foi aberto em modo texto(padrão)
+                                     //e não binário(ios::bin) pega cada linha
+
+            }
+            fread.close();
+        }
     
 }
 
