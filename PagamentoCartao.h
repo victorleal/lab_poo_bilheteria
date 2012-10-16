@@ -16,7 +16,7 @@ private:
     long numeroCartao;
     
 protected:
-    void serialize();
+    string serialize();
     void showDetailsFormaPagamento();
     void unserialize();
     

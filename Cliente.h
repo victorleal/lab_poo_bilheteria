@@ -9,6 +9,7 @@
 #define	CLIENTE_H
 
 #include "PersistentObject.h"
+#include "FileHandler.h"
 
 class Cliente : public PersistentObject{
     
@@ -21,10 +22,11 @@ private:
     
 protected:
     string getClassName();
-    void serialize();
+    string serialize();
     void unserialize();
     
 public:
+    Cliente();
     string getCpf();
     string getEmail();
     string getEndereco();
@@ -36,6 +38,7 @@ public:
     void setNome(string);
     void setTelefone(string);
     void show();
+    void cadastrar();
     
 };
 

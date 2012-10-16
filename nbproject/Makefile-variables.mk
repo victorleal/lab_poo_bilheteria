@@ -17,11 +17,11 @@ CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin-Windows/package/cmaismais.tar
 # Release configuration
 CND_PLATFORM_Release=Cygwin-Windows
 CND_ARTIFACT_DIR_Release=dist/Release/Cygwin-Windows
-CND_ARTIFACT_NAME_Release=projeto1
-CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/projeto1
+CND_ARTIFACT_NAME_Release=c_mais_mais
+CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/c_mais_mais
 CND_PACKAGE_DIR_Release=dist/Release/Cygwin-Windows/package
-CND_PACKAGE_NAME_Release=projeto1.tar
-CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/projeto1.tar
+CND_PACKAGE_NAME_Release=cmaismais.tar
+CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/cmaismais.tar
 #
 # include compiler specific variables
 #

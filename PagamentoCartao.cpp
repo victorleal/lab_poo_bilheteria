@@ -7,7 +7,7 @@
 
 #include "PagamentoCartao.h"
 
-void PagamentoCartao::serialize() {
+string PagamentoCartao::serialize() {
 }
 
 void PagamentoCartao::showDetailsFormaPagamento() {

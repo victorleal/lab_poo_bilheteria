@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configurationDescriptor version="80">
+<configurationDescriptor version="84">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <logicalFolder name="HeaderFiles"
                    displayName="Arquivos de Cabeçalho"
@@ -9,6 +9,7 @@
       <itemPath>Espetaculo.h</itemPath>
       <itemPath>FileHandler.h</itemPath>
       <itemPath>FormaPagamento.h</itemPath>
+      <itemPath>Menu.h</itemPath>
       <itemPath>Pagamento.h</itemPath>
       <itemPath>PagamentoBoleto.h</itemPath>
       <itemPath>PagamentoCartao.h</itemPath>
@@ -23,6 +24,7 @@
       <itemPath>Espetaculo.cpp</itemPath>
       <itemPath>FileHandler.cpp</itemPath>
       <itemPath>FormaPagamento.cpp</itemPath>
+      <itemPath>Menu.cpp</itemPath>
       <itemPath>Pagamento.cpp</itemPath>
       <itemPath>PagamentoBoleto.cpp</itemPath>
       <itemPath>PagamentoCartao.cpp</itemPath>

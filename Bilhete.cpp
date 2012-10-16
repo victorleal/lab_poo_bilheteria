@@ -10,11 +10,12 @@
 #include "Bilhete.h"
 #include "Espetaculo.h"
 
-string Bilhete::getClassName() {
 
+string Bilhete::getClassName() {
+    return "Bilhete";
 }
 
-void Bilhete::serialize() {
+string Bilhete::serialize() {
 
 }
 

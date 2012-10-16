@@ -24,10 +24,11 @@ private:
     
 protected:
     string getClassName();
-    void serialize();
+    string serialize();
     void unserialize();
 
 public:
+    Bilhete();
     Cliente getCliente();
     string getCodigoBilhete();
     Espetaculo getEspetaculo();

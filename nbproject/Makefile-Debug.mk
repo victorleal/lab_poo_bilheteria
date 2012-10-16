@@ -22,6 +22,7 @@ AS=as.exe
 
 # Macros
 CND_PLATFORM=Cygwin-Windows
+CND_DLIB_EXT=dll
 CND_CONF=Debug
 CND_DISTDIR=dist
 CND_BUILDDIR=build
@@ -40,6 +41,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/Bilhete.o \
 	${OBJECTDIR}/PagamentoCartao.o \
 	${OBJECTDIR}/FormaPagamento.o \
+	${OBJECTDIR}/Menu.o \
 	${OBJECTDIR}/Cliente.o \
 	${OBJECTDIR}/PagamentoBoleto.o \
 	${OBJECTDIR}/Espetaculo.o \
@@ -100,6 +102,11 @@ ${OBJECTDIR}/FormaPagamento.o: FormaPagamento.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/FormaPagamento.o FormaPagamento.cpp
+
+${OBJECTDIR}/Menu.o: Menu.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -g -MMD -MP -MF $@.d -o ${OBJECTDIR}/Menu.o Menu.cpp
 
 ${OBJECTDIR}/Cliente.o: Cliente.cpp 
 	${MKDIR} -p ${OBJECTDIR}

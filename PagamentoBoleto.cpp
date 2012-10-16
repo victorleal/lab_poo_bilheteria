@@ -7,7 +7,7 @@
 
 #include "PagamentoBoleto.h"
 
-void PagamentoBoleto::serialize() {
+string PagamentoBoleto::serialize() {
 
 }
 

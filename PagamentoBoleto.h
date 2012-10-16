@@ -16,7 +16,7 @@ private:
     long numeroBoleto;
 
 protected:
-    void serialize();
+    string serialize();
     void showDetailsFormaPagamento();
     void unserialize();
 
