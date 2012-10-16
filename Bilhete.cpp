@@ -3,9 +3,9 @@
  * Author: victorleal
  * 
  * Created on 8 de Outubro de 2012, 22:48
+ * 
+ * 
  */
-
-//Implementar métodos
 
 #include "Bilhete.h"
 #include "Espetaculo.h"
