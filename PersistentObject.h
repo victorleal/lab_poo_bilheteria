@@ -19,7 +19,7 @@ class PersistentObject {
 private:
     int id;
     
-    int removeFile();
+    bool removeFile();
     void writeFile();
 
 protected:

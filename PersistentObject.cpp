@@ -8,7 +8,26 @@
 #include "PersistentObject.h"
 #include "FileHandler.h"
 
-int PersistentObject::removeFile() {
+bool PersistentObject::removeFile() 
+{
+    string fileName;
+    bool retorno;
+    
+    fileName = this->getFileName();
+    
+    if(!remove(fileName.c_str()))
+    {
+        perror("Erro ao deletar o arquivo");
+        retorno = false;
+    }
+    
+    else
+        {
+        cout << "Arquivo deletado" <<endl;
+        retorno = true;
+        }
+    
+    return retorno;
 }
 
 void PersistentObject::writeFile() {
