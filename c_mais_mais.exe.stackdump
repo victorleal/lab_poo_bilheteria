@@ -1,0 +1,9 @@
+Exception: STATUS_ACCESS_VIOLATION at eip=00406051
+eax=00000046 ebx=00000000 ecx=0028A800 edx=0041A93F esi=61276030 edi=611A1EDF
+ebp=0028A978 esp=0028A7F0 program=C:\Users\andre\Documents\NetBeansProjects\c_mais_mais\dist\Debug\Cygwin-Windows\c_mais_mais.exe, pid 992, thread main
+cs=0023 ds=002B es=002B fs=0053 gs=002B ss=002B
+Stack trace:
+Frame     Function  Args
+0028A978  00406051  (48004168, 5C200102, 010028AA, 00000000)
+0028AA28  00407F8B  (48004168, 34200102, A30028AB, D80028AA)
+      3 [main] c_mais_mais 992 exception::handle: Error while dumping state (probably corrupted stack)

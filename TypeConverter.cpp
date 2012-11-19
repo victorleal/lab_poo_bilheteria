@@ -8,7 +8,14 @@
 #include "TypeConverter.h"
 #include <iostream>
 using namespace std;
+
 string TypeConverter::convertFloatToString(float valor) {
+    ostringstream buffer;
+    buffer << valor;
+    return buffer.str();
+}
+
+string TypeConverter::convertIntToString(int valor) {
     ostringstream buffer;
     buffer << valor;
     return buffer.str();
@@ -17,6 +24,13 @@ string TypeConverter::convertFloatToString(float valor) {
 float TypeConverter::convertStringToFloat(string valor) {
     istringstream buffer(valor);
     float valorConvertido;
+    buffer >> valorConvertido;
+    return valorConvertido;
+}
+
+int TypeConverter::convertStringToInt(string valor) {
+    istringstream buffer(valor);
+    int valorConvertido;
     buffer >> valorConvertido;
     return valorConvertido;
 }

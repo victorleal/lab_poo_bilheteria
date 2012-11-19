@@ -21,11 +21,14 @@ public:
     int deleteFile();
     int fileExists();
     FileHandler(string);
+    FileHandler();
     string getFileName();
     string getFilePath();
     string readFromFile();
     void setFileName(string);
     void writeToFile(string);
+    void listFiles();
+    string getNextId(string);
     
 };
 

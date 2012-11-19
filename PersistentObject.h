@@ -11,20 +11,21 @@
 #include <iostream>
 #include <fstream>
 #include <string.h>
+#include <stdio.h>
 
 using namespace std;
 
 class PersistentObject {
     
 private:
-    int id;
     
-    bool removeFile();
+    
+    int removeFile();
     void writeFile();
 
 protected:
     string serializedObject;
-    
+    int id;
     virtual string getClassName();
     void resetSerialized();
     virtual string serialize();
@@ -41,6 +42,7 @@ public:
     void read();
     void read(int);
     void setId(int);
+    void setId();
     virtual void show();
     void update();
 

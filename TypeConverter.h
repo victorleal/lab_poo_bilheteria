@@ -21,7 +21,9 @@ private:
     
 public:
     string convertFloatToString(float);
+    string convertIntToString(int);
     float convertStringToFloat(string);
+    int convertStringToInt(string);
     time_t convertStringToTime(string);
     string convertTimeToString(time_t);
 };

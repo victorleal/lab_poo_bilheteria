@@ -7,27 +7,12 @@
 
 #include "PersistentObject.h"
 #include "FileHandler.h"
+#include "TypeConverter.h"
 
-bool PersistentObject::removeFile() 
+int PersistentObject::removeFile()//André 17/10/2012 ****
 {
-    string fileName;
-    bool retorno;
-    
-    fileName = this->getFileName();
-    
-    if(!remove(fileName.c_str()))
-    {
-        perror("Erro ao deletar o arquivo");
-        retorno = false;
-    }
-    
-    else
-        {
-        cout << "Arquivo deletado" <<endl;
-        retorno = true;
-        }
-    
-    return retorno;
+    FileHandler fh(this->getFileName());
+    int retorno = fh.deleteFile();
 }
 
 void PersistentObject::writeFile() {
@@ -48,13 +33,14 @@ void PersistentObject::unserialize() {
 }
 
 void PersistentObject::create() {
-    ofstream handler;
-    handler.open(this->getFileName().c_str());
+    this->setId();
+    //FileHandler *fh = new FileHandler(this->getFileName());
     this->writeFile();
-    handler.close();
 }
 
 void PersistentObject::deleting() {
+    
+    this->removeFile();
 }
 
 string PersistentObject::getField(int) {
@@ -63,9 +49,12 @@ string PersistentObject::getField(int) {
 string PersistentObject::getFileName() {
     string classe(this->getClassName());
     string underline("_");
-    string id("2");
+
+    stringstream id;
+    id << this->getId();
+
     string extensao(".txt");
-    string file = classe + underline + id + extensao;
+    string file = classe + underline + id.str() + extensao;
     return file;
 }
 
@@ -74,9 +63,25 @@ int PersistentObject::getId() {
 }
 
 void PersistentObject::read() {
+    FileHandler fh(this->getFileName());
+    int a = fh.fileExists();
+    if (a == 1) {
+        this->serializedObject = fh.readFromFile();
+        this->unserialize();
+    } else {
+        cout << " ai nao amigo" << endl;
+    }
 }
 
-void PersistentObject::read(int) {
+void PersistentObject::read(int id) {
+    this->setId(id);
+    this->read();
+}
+
+void PersistentObject::setId() {
+    FileHandler fh;
+    TypeConverter tc;
+    this->id = tc.convertStringToInt(fh.getNextId(this->getClassName()));
 }
 
 void PersistentObject::setId(int id) {

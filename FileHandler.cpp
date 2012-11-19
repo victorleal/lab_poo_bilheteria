@@ -6,54 +6,116 @@
  */
 
 #include "FileHandler.h"
+#include "TypeConverter.h"
+#include <dirent.h>
 
 int FileHandler::deleteFile() {
+string fileName;
+    int retorno;
+    string caminho = "arquivos/";
+    fileName = caminho+this->getFileName();
 
+    if (remove(fileName.c_str()) != 0) {
+        perror("Erro ao deletar o arquivo");
+        retorno = 0;
+    } else {
+        cout << "Arquivo deletado" << endl;
+        retorno = 1;
+    }
+
+    return retorno;
 }
 
-int FileHandler::fileExists(){
+int FileHandler::fileExists() {
+    unsigned char isDir = 0x4;
+    unsigned char isFile = 0x8;
+    DIR *dir = opendir("arquivos/");
+    struct dirent *entrada;
+
+    while (entrada = readdir(dir)) {
+        if (entrada->d_type == isFile) {
+            if (entrada->d_name == this->getFileName()) {
+                return 1;
+            }
+        }
+    }
     
+    return 0;
 }
 
-FileHandler::FileHandler(string name){
+string FileHandler::getNextId(string classe) 
+{
+    TypeConverter tc;
+     string conteudo = "";
+     int nextId;
+     
+    string name = "arquivos/id"+classe+".txt";
+    ifstream fin(name.c_str());
+    
+    if (fin.is_open()) {
+        char ch;
+        while (fin.get(ch)) {
+            conteudo.append(1, ch);
+        }
+       fin.close();
+    }
+    
+    nextId = tc.convertStringToInt(conteudo);
+    nextId++;
+    
+   ofstream fin2(name.c_str());
+    conteudo = tc.convertIntToString(nextId);
+    fin2.write(conteudo.c_str(), conteudo.size());
+     
+    return conteudo;
+}
+
+FileHandler::FileHandler(string name) {
+    fstream handler;
     this->setFileName(name);
+    string filename = this->getFilePath() + this->getFileName();
+    handler.open(filename.c_str());
+    handler.close();
 }
 
-string FileHandler::getFileName(){
+FileHandler::FileHandler() {
+
+}
+
+string FileHandler::getFileName() {
     return this->fileName;
 }
 
-string FileHandler::getFilePath(){
-    
+string FileHandler::getFilePath() {
+    string path = "arquivos/";
+    return path;
+
 }
 
-string FileHandler::readFromFile()
-{
-    string conteudo;
+string FileHandler::readFromFile() {
+    string conteudo = "";
     string name = this->getFilePath() + this->getFileName();
-    fstream fread("name", fstream::out);
-    
-    fread.open(name.c_str());
-        if (fread.is_open()) 
-        {
-                while (!fread.eof() )
-            {
-              getline (fread,conteudo); // como foi aberto em modo texto(padrão)
-                                     //e não binário(ios::bin) pega cada linha
+    ifstream fin(name.c_str(), ios::out);
 
-            }
-            fread.close();
+    if (fin.is_open()) {
+        char ch;
+        while (fin.get(ch)) {
+            conteudo.append(1, ch);
         }
-    
+        fin.close();
+    }
+    cout << conteudo;
+    return conteudo;
 }
 
-void FileHandler::setFileName(string name){
+void FileHandler::setFileName(string name) {
     this->fileName = name;
 }
 
-void FileHandler::writeToFile(string object){
+void FileHandler::writeToFile(string object) {
     ofstream handler;
-    handler.open(this->getFileName().c_str()); 
+    string file = this->getFilePath() + this->getFileName();
+    handler.open(file.c_str());
     handler.write(object.c_str(), object.size());
     handler.close();
 }

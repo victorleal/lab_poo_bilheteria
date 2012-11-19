@@ -6,6 +6,7 @@
  */
 
 #include "Menu.h"
+#include "FileHandler.h"
 
 Menu::Menu() {
     int opcao = 0;
@@ -21,13 +22,16 @@ Menu::Menu() {
         switch (opcao) {
             case 1:
                 this->submenuClientes();
+                
                 break;
             case 2:
                 this->submenuEspetaculos();
                 break;
             case 3:
                 this->submenuBilhetes();
+             
                 break;
+             
         }
     }
 }

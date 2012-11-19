@@ -9,7 +9,7 @@
       <itemPath>Espetaculo.h</itemPath>
       <itemPath>FileHandler.h</itemPath>
       <itemPath>FormaPagamento.h</itemPath>
-	  <itemPath>Interfaces.h</itemPath>
+      <itemPath>Interfaces.h</itemPath>
       <itemPath>Menu.h</itemPath>
       <itemPath>Pagamento.h</itemPath>
       <itemPath>PagamentoBoleto.h</itemPath>
@@ -25,7 +25,7 @@
       <itemPath>Espetaculo.cpp</itemPath>
       <itemPath>FileHandler.cpp</itemPath>
       <itemPath>FormaPagamento.cpp</itemPath>
-	  <itemPath>Interfaces.cpp</itemPath>
+      <itemPath>Interfaces.cpp</itemPath>
       <itemPath>Menu.cpp</itemPath>
       <itemPath>Pagamento.cpp</itemPath>
       <itemPath>PagamentoBoleto.cpp</itemPath>
