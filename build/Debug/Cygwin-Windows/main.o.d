@@ -1,16 +1,23 @@
-build/Debug/Cygwin-Windows/main.o: main.cpp Menu.h Interfaces.h Cliente.h \
-  PersistentObject.h Espetaculo.h TypeConverter.h FileHandler.h
+build/Debug/Cygwin-Windows/main.o: main.cpp Menu.h Interfaces.h Bilhete.h \
+  PersistentObject.h Cliente.h Espetaculo.h TypeConverter.h Pagamento.h \
+  FormaPagamento.h FileHandler.h
 
 Menu.h:
 
 Interfaces.h:
 
-Cliente.h:
+Bilhete.h:
 
 PersistentObject.h:
+
+Cliente.h:
 
 Espetaculo.h:
 
 TypeConverter.h:
+
+Pagamento.h:
+
+FormaPagamento.h:
 
 FileHandler.h:

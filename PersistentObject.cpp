@@ -24,6 +24,7 @@ string PersistentObject::getClassName() {
 }
 
 void PersistentObject::resetSerialized() {
+    this->serializedObject = "";
 }
 
 string PersistentObject::serialize() {
@@ -46,7 +47,35 @@ void PersistentObject::deleting() {
     }
 }
 
-string PersistentObject::getField(int) {
+string PersistentObject::getField(int field) {
+
+    int cont = 0;
+    int cont2 = 0;
+    int qtdePipe = 0;
+
+    int campo = field - 1;
+
+    this->read();
+
+    char string[this->serializedObject.length()];
+    char recebe[25];
+
+    strcpy(string, this->serializedObject.c_str());
+    for (cont = 0; string[cont] != '\0'; cont++) {
+        if (string[cont] == '|') {
+            qtdePipe++;
+        }
+        if (campo == qtdePipe) {
+            if(string[cont] == '|'){
+                cont++;
+            }
+            recebe[cont2] = string[cont];
+            cont2++;
+        }
+    }
+    recebe[cont2] = '\0';
+    
+    return recebe;
 }
 
 string PersistentObject::getFileName() {
@@ -73,7 +102,7 @@ int PersistentObject::read() {
         this->unserialize();
         return 1;
     } else {
-        perror("Registro nao encontrado");//cout << "Objeto nao encontrado" << endl;
+        perror("Registro nao encontrado"); //cout << "Objeto nao encontrado" << endl;
         return 0;
     }
 }

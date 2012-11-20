@@ -79,6 +79,13 @@ void Interfaces::cadastrarEspetaculo() {
 }
 
 void Interfaces::cadastrarBilhete() {
+    Bilhete b;
+    Cliente c;
+    Espetaculo e;
+    
+    cout << "Cadastro Bilhete" << endl;
+    c.setId(9);
+    c.getField(5);
 }
 
 void Interfaces::editarCliente() {

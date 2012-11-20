@@ -13,6 +13,7 @@
 #include <sstream>
 #include <dirent.h>
 #include <stdio.h>
+#include "Bilhete.h"
 #include "Cliente.h"
 #include "Espetaculo.h"
 #include "TypeConverter.h"

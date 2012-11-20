@@ -29,6 +29,7 @@ public:
     void writeToFile(string);
     void listFiles();
     string getNextId(string);
+    string *listFiles();
     
 };
 

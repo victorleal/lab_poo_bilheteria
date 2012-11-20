@@ -115,3 +115,31 @@ void FileHandler::writeToFile(string object) {
     handler.write(object.c_str(), object.size());
     handler.close();
 }
+
+string* FileHandler::listFiles(string classe) {
+    string * files = new string[100];
+    int cont = 0;
+    int cont2 = 0;
+    string aux[10];
+
+    unsigned char isFile = 0x8;
+    DIR *dir = opendir("arquivos/");
+    struct dirent *entrada;
+
+    while (entrada = readdir(dir)) {
+        if (entrada->d_type == isFile) {
+            //Pega o nome do arquivo sem a id
+            while (entrada->d_name[cont2] != '_') {
+                aux[cont2] = entrada->d_name[cont2];
+                cont2++;
+            }
+            //compara o nome
+            if (aux == classe) {
+                files[cont] = entrada->d_name;
+            }
+        }
+        cont++;
+    }
+    files[cont] = "\0";
+    return files;
+}
