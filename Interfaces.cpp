@@ -8,6 +8,7 @@
 #include "Interfaces.h"
 #include "PagamentoCartao.h"
 #include "PagamentoBoleto.h"
+
 Interfaces::Interfaces() {
 }
 
@@ -89,7 +90,7 @@ void Interfaces::cadastrarBilhete() {
     int idCliente, idEspetaculo, tipoPagamento;
     string data, valor, bandeira, numeroCartao, banco, codigoBarras;
     TypeConverter tc;
-    
+
     cout << "Cadastro Bilhete" << endl;
 
     cout << "Selecione o cliente: " << endl;
@@ -100,8 +101,7 @@ void Interfaces::cadastrarBilhete() {
     cout << "Selecione o espetaculo: " << endl;
     e.listar();
     cout << "Id do Espetaculo: " << endl;
-    cin >> idCliente;
-    cout << "\n" << endl;
+    cin >> idEspetaculo;
 
     c.setId(idCliente);
     e.setId(idEspetaculo);
@@ -109,50 +109,52 @@ void Interfaces::cadastrarBilhete() {
     c.read();
     e.read();
 
-    b.setCliente(c);
-    b.setPagamento(p);
-    b.setEspetaculo(e);
-
-    Pagamento p;
-    TypeConverter tc;
-    string data, valor;
-
+    //PAGAMENTO
     cout << "Data e Hora (formato dd/mm/aaaa hh:mm:ss): " << endl;
+    limpaBuffer();
     getline(cin, data);
     p.setDataPagamento(tc.convertStringToTime(data));
+    
     cout << "Valor: " << endl;
     getline(cin, valor);
     p.setValor(tc.convertStringToFloat(valor));
-    
-    do
-    {
+
+    do {
         cout << "Forma de pagamento: " << endl;
         cout << "1 - Cartao" << endl;
         cout << "2 - Boleto" << endl;
         cin >> tipoPagamento;
 
     } while (tipoPagamento != 1 and tipoPagamento != 2);
-    
-       if(tipoPagamento == 1)
-        {
-           cout << "Bandeira : " << endl;
-           cin >> bandeira;
-           cout << "Numero do Cartao: " << endl;
-           cin >> numeroCartao;
-           
-           fp = new PagamentoCartao(bandeira, numeroCartao);
-}
 
-       else if (tipoPagamento == 2)
-       {
-           cout << "Banco : " << endl;
-           cin >> banco;
-           cout << "Codigo de Barras: " << endl;
-           cin >> codigoBarras;
-           
-           fp = new PagamentoBoleto(banco, codigoBarras);
-       }
+    if (tipoPagamento == 1) {
+        cout << "Bandeira: " << endl;
+        limpaBuffer();
+        getline(cin, bandeira);
+        cout << "Numero do Cartao: " << endl;
+        getline(cin, numeroCartao);
+
+        fp = new PagamentoCartao(bandeira, numeroCartao);
+    }
+    else if (tipoPagamento == 2) {
+        cout << "Banco : " << endl;
+        limpaBuffer();
+        getline(cin, banco);
+        cout << "Codigo de Barras: " << endl;
+        getline(cin, codigoBarras);
+
+        fp = new PagamentoBoleto(banco, codigoBarras);
+    }
+    fp->create();
     
+    p.setFormaPagamento(fp);
+    p.create();
+
+    b.setCliente(c);
+    b.setPagamento(p);
+    b.setEspetaculo(e);
+    b.create();
+
 }
 
 void Interfaces::editarCliente() {

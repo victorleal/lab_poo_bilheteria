@@ -27,6 +27,7 @@ protected:
     void unserialize();
 
 public:
+    Bilhete();
     Cliente getCliente();
     string getCodigoBilhete();
     Espetaculo getEspetaculo();

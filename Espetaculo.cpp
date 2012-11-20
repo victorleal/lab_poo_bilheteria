@@ -6,6 +6,7 @@
  */
 
 #include "Espetaculo.h"
+#include "FileHandler.h"
 
 Espetaculo::Espetaculo() {
     this->SEP = "|";

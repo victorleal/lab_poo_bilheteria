@@ -9,13 +9,41 @@
 
 #include "Bilhete.h"
 #include "Espetaculo.h"
+#include <sstream>
+
+Bilhete::Bilhete() {
+    this->SEP = "|";
+}
 
 string Bilhete::getClassName() {
-
+    return "Bilhete";
 }
 
 string Bilhete::serialize() {
+    this->serializedObject = "";
 
+    stringstream id;
+    id << this->getId();
+
+    stringstream idCliente;
+    idCliente << this->getCliente().getId();
+
+    stringstream idEspetaculo;
+    idEspetaculo << this->getEspetaculo().getId();
+
+    stringstream idPagamento;
+    idPagamento << this->getPagamento().getId();
+    
+    string codBilhete = idEspetaculo.str()  + "-" + id.str();
+    this->setCodigoBilhete(codBilhete);
+
+    this->serializedObject += id.str() + this->SEP;
+    this->serializedObject += this->getCodigoBilhete() + this->SEP;
+    this->serializedObject += idCliente.str() + this->SEP;
+    this->serializedObject += idEspetaculo.str() + this->SEP;
+    this->serializedObject += idPagamento.str() + this->SEP;
+
+    return this->serializedObject;
 }
 
 void Bilhete::unserialize() {

@@ -13,7 +13,7 @@
 class PagamentoBoleto : public FormaPagamento {
 private:
     string bancoResponsavel;
-    long numeroBoleto;
+    string numeroBoleto;
 
 protected:
     string serialize();
@@ -25,9 +25,10 @@ public:
     string getBancoResponsavel();
     int getCodigoTipoPagamento();
     string getDescricaoTipoPagamento();
-    long getNumeroBoleto();
+    string getNumeroBoleto();
     void setBancoResponsavel(string);
-    void setNumeroBoleto(long);
+    void setNumeroBoleto(string);
+    string getClassName();
 
 };
 

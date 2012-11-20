@@ -10,13 +10,15 @@
 
 #include "PersistentObject.h"
 
-class FormaPagamento : public PersistentObject{
-    
+class FormaPagamento : public PersistentObject {
 protected:
     string getClassName();
     string serialize();
     virtual void showDetailsFormaPagamento();
     void unserialize();
+public:
+    virtual int getCodigoTipoPagamento();
+    virtual string getDescricaoTipoPagamento();
 };
 
 #endif	/* FORMAPAGAMENTO_H */

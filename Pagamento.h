@@ -18,7 +18,7 @@ class Pagamento : public PersistentObject {
 private:
     int codigoTipoPagamento;
     time_t dataPagamento;
-    FormaPagamento formaPagamento;
+    FormaPagamento *formaPagamento;
     float valor;
     
 protected:
@@ -27,11 +27,12 @@ protected:
     void unserialize();
     
 public:
+    Pagamento();
     time_t getDataPagamento();
-    FormaPagamento getFormaPagamento();
+    FormaPagamento *getFormaPagamento();
     float getValor();
     void setDataPagamento(time_t);
-    void setFormaPagamento(FormaPagamento);
+    void setFormaPagamento(FormaPagamento*);
     void setValor(float);
     void show();
 

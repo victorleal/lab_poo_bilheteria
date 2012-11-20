@@ -6,14 +6,29 @@
  */
 
 #include "PagamentoBoleto.h"
+#include <sstream>
 
-PagamentoBoleto::PagamentoBoleto(string bancoResponsavel, string numero)
-{
+PagamentoBoleto::PagamentoBoleto(string bancoResponsavel, string numero) {
     this->setBancoResponsavel(bancoResponsavel);
     this->setNumeroBoleto(numero);
+    this->SEP = "|";
+}
+
+string PagamentoBoleto::getClassName() {
+    return "PagamentoBoleto";
 }
 
 string PagamentoBoleto::serialize() {
+    this->serializedObject = "";
+    
+    stringstream id;
+    id << this->getId();
+
+    this->serializedObject += id.str() + this->SEP;
+    this->serializedObject += this->getBancoResponsavel() + this->SEP;
+    this->serializedObject += this->getNumeroBoleto() + this->SEP;
+
+    return this->serializedObject;
 
 }
 
@@ -30,14 +45,14 @@ string PagamentoBoleto::getBancoResponsavel() {
 }
 
 int PagamentoBoleto::getCodigoTipoPagamento() {
-    return this->getCodigoTipoPagamento();
+    return 2;
 }
 
 string PagamentoBoleto::getDescricaoTipoPagamento() {
-    return this->getDescricaoTipoPagamento();
+    return "Boleto Bancario";
 }
 
-long PagamentoBoleto::getNumeroBoleto() {
+string PagamentoBoleto::getNumeroBoleto() {
     return this->numeroBoleto;
 }
 
@@ -45,6 +60,6 @@ void PagamentoBoleto::setBancoResponsavel(string bancoResponsavel) {
     this->bancoResponsavel = bancoResponsavel;
 }
 
-void PagamentoBoleto::setNumeroBoleto(long numero) {
+void PagamentoBoleto::setNumeroBoleto(string numero) {
     this->numeroBoleto = numero;
 }

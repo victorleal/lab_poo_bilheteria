@@ -13,7 +13,7 @@
 class PagamentoCartao : public FormaPagamento{
 private:
     string bandeira;
-    long numeroCartao;
+    string numeroCartao;
     
 protected:
     string serialize();
@@ -25,9 +25,10 @@ public:
     string getBandeiraCartao();
     int getCodigoTipoPagamento();
     string getDescricaoTipoPagamento();
-    long getNumeroCartao();
+    string getNumeroCartao();
     void setBandeiraCartao(string);
-    void setNumeroCartao(long);
+    void setNumeroCartao(string);
+    string getClassName();
     
 };
 

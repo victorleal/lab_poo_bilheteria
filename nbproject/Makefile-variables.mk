@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=Cygwin-Windows
 CND_ARTIFACT_DIR_Debug=dist/Debug/Cygwin-Windows
-CND_ARTIFACT_NAME_Debug=c_mais_mais
-CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin-Windows/c_mais_mais
+CND_ARTIFACT_NAME_Debug=c_mais_mais_fucking_version
+CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin-Windows/c_mais_mais_fucking_version
 CND_PACKAGE_DIR_Debug=dist/Debug/Cygwin-Windows/package
-CND_PACKAGE_NAME_Debug=cmaismais.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin-Windows/package/cmaismais.tar
+CND_PACKAGE_NAME_Debug=cmaismaisfuckingversion.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin-Windows/package/cmaismaisfuckingversion.tar
 # Release configuration
 CND_PLATFORM_Release=Cygwin-Windows
 CND_ARTIFACT_DIR_Release=dist/Release/Cygwin-Windows
-CND_ARTIFACT_NAME_Release=c_mais_mais
-CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/c_mais_mais
+CND_ARTIFACT_NAME_Release=c_mais_mais_fucking_version
+CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/c_mais_mais_fucking_version
 CND_PACKAGE_DIR_Release=dist/Release/Cygwin-Windows/package
-CND_PACKAGE_NAME_Release=cmaismais.tar
-CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/cmaismais.tar
+CND_PACKAGE_NAME_Release=cmaismaisfuckingversion.tar
+CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/cmaismaisfuckingversion.tar
 #
 # include compiler specific variables
 #

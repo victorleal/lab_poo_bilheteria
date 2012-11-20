@@ -68,11 +68,11 @@ LDLIBSOPTIONS=
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/c_mais_mais.exe
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/c_mais_mais_fucking_version.exe
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/c_mais_mais.exe: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/c_mais_mais_fucking_version.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/c_mais_mais ${OBJECTFILES} ${LDLIBSOPTIONS} 
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/c_mais_mais_fucking_version ${OBJECTFILES} ${LDLIBSOPTIONS} 
 
 ${OBJECTDIR}/Pagamento.o: Pagamento.cpp 
 	${MKDIR} -p ${OBJECTDIR}
@@ -145,7 +145,7 @@ ${OBJECTDIR}/PersistentObject.o: PersistentObject.cpp
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/c_mais_mais.exe
+	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/c_mais_mais_fucking_version.exe
 
 # Subprojects
 .clean-subprojects:
