@@ -6,7 +6,8 @@
  */
 
 #include "Interfaces.h"
-
+#include "PagamentoCartao.h"
+#include "PagamentoBoleto.h"
 Interfaces::Interfaces() {
 }
 
@@ -81,30 +82,76 @@ void Interfaces::cadastrarEspetaculo() {
 void Interfaces::cadastrarBilhete() {
     Bilhete b;
     Cliente c;
+    Pagamento p;
     Espetaculo e;
-    int idCliente, idEspetaculo;
+    FormaPagamento *fp;
+
+    int idCliente, idEspetaculo, tipoPagamento;
+    string data, valor, bandeira, numeroCartao, banco, codigoBarras;
+    TypeConverter tc;
     
     cout << "Cadastro Bilhete" << endl;
-    
+
     cout << "Selecione o cliente: " << endl;
     c.listar();
     cout << "Id do Cliente: " << endl;
     cin >> idCliente;
-    
+
     cout << "Selecione o espetaculo: " << endl;
     e.listar();
     cout << "Id do Espetaculo: " << endl;
     cin >> idCliente;
     cout << "\n" << endl;
-    
+
     c.setId(idCliente);
     e.setId(idEspetaculo);
-    
+
     c.read();
     e.read();
-    
+
     b.setCliente(c);
+    b.setPagamento(p);
     b.setEspetaculo(e);
+
+    Pagamento p;
+    TypeConverter tc;
+    string data, valor;
+
+    cout << "Data e Hora (formato dd/mm/aaaa hh:mm:ss): " << endl;
+    getline(cin, data);
+    p.setDataPagamento(tc.convertStringToTime(data));
+    cout << "Valor: " << endl;
+    getline(cin, valor);
+    p.setValor(tc.convertStringToFloat(valor));
+    
+    do
+    {
+        cout << "Forma de pagamento: " << endl;
+        cout << "1 - Cartao" << endl;
+        cout << "2 - Boleto" << endl;
+        cin >> tipoPagamento;
+
+    } while (tipoPagamento != 1 and tipoPagamento != 2);
+    
+       if(tipoPagamento == 1)
+        {
+           cout << "Bandeira : " << endl;
+           cin >> bandeira;
+           cout << "Numero do Cartao: " << endl;
+           cin >> numeroCartao;
+           
+           fp = new PagamentoCartao(bandeira, numeroCartao);
+}
+
+       else if (tipoPagamento == 2)
+       {
+           cout << "Banco : " << endl;
+           cin >> banco;
+           cout << "Codigo de Barras: " << endl;
+           cin >> codigoBarras;
+           
+           fp = new PagamentoBoleto(banco, codigoBarras);
+       }
     
 }
 

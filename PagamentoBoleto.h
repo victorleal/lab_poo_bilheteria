@@ -21,6 +21,7 @@ protected:
     void unserialize();
 
 public:
+    PagamentoBoleto::PagamentoBoleto(string, string);
     string getBancoResponsavel();
     int getCodigoTipoPagamento();
     string getDescricaoTipoPagamento();

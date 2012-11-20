@@ -7,6 +7,12 @@
 
 #include "PagamentoCartao.h"
 
+PagamentoCartao::PagamentoCartao(string bandeira, string numero)
+{
+    this->setBandeiraCartao(bandeira);
+    this->setNumeroCartao(numero);
+}
+
 string PagamentoCartao::serialize() {
 }
 

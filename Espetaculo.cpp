@@ -131,3 +131,15 @@ void Espetaculo::show() {
         this->setId(-1);
     }
 }
+
+void Espetaculo::listar(){
+    FileHandler fh;
+    string *objects = fh.listFiles(this->getClassName());
+    int cont = 0;
+    
+    while(objects[cont] != "\0"){
+        this->serializedObject = objects[cont];
+        cout << this->getField(1) << " - " << this->getField(2) << endl;
+        cont++;
+    }
+}

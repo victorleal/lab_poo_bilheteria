@@ -7,6 +7,12 @@
 
 #include "PagamentoBoleto.h"
 
+PagamentoBoleto::PagamentoBoleto(string bancoResponsavel, string numero)
+{
+    this->setBancoResponsavel(bancoResponsavel);
+    this->setNumeroBoleto(numero);
+}
+
 string PagamentoBoleto::serialize() {
 
 }

@@ -21,6 +21,7 @@ protected:
     void unserialize();
     
 public:
+    PagamentoCartao::PagamentoCartao(string , string);
     string getBandeiraCartao();
     int getCodigoTipoPagamento();
     string getDescricaoTipoPagamento();

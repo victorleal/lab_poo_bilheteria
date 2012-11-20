@@ -42,6 +42,7 @@ public:
     void setPrecoBilhete(float);
     void setTitulo(string);
     void show();
+    void listar();
     
 };
 
