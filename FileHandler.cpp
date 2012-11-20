@@ -10,24 +10,21 @@
 #include <dirent.h>
 
 int FileHandler::deleteFile() {
-string fileName;
-    int retorno;
+    string fileName;
+    int retorno = 0;
     string caminho = "arquivos/";
-    fileName = caminho+this->getFileName();
+    fileName = caminho + this->getFileName();
 
-    if (remove(fileName.c_str()) != 0) {
-        perror("Erro ao deletar o arquivo");
-        retorno = 0;
-    } else {
-        cout << "Arquivo deletado" << endl;
-        retorno = 1;
+    if (this->fileExists()) { //se o arquivo existir
+        if (remove(fileName.c_str()) == 0) { //tente remover
+            retorno = 1;
+        }
     }
 
     return retorno;
 }
 
 int FileHandler::fileExists() {
-    unsigned char isDir = 0x4;
     unsigned char isFile = 0x8;
     DIR *dir = opendir("arquivos/");
     struct dirent *entrada;
@@ -39,34 +36,33 @@ int FileHandler::fileExists() {
             }
         }
     }
-    
+
     return 0;
 }
 
-string FileHandler::getNextId(string classe) 
-{
+string FileHandler::getNextId(string classe) {
     TypeConverter tc;
-     string conteudo = "";
-     int nextId;
-     
-    string name = "arquivos/id"+classe+".txt";
+    string conteudo = "";
+    int nextId;
+
+    string name = "arquivos/id" + classe + ".txt";
     ifstream fin(name.c_str());
-    
+
     if (fin.is_open()) {
         char ch;
         while (fin.get(ch)) {
             conteudo.append(1, ch);
         }
-       fin.close();
+        fin.close();
     }
-    
+
     nextId = tc.convertStringToInt(conteudo);
     nextId++;
-    
-   ofstream fin2(name.c_str());
+
+    ofstream fin2(name.c_str());
     conteudo = tc.convertIntToString(nextId);
     fin2.write(conteudo.c_str(), conteudo.size());
-     
+
     return conteudo;
 }
 
@@ -104,7 +100,7 @@ string FileHandler::readFromFile() {
         }
         fin.close();
     }
-    cout << conteudo;
+
     return conteudo;
 }
 

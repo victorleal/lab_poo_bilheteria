@@ -6,9 +6,6 @@
  */
 
 #include "Interfaces.h"
-#include "Cliente.h"
-#include "dirent.h"
-#include <stdio.h>
 
 Interfaces::Interfaces() {
 }
@@ -20,28 +17,24 @@ void Interfaces::cadastrarCliente() {
     cout << "\nCadastro Cliente";
 
     cout << "\n\tDigite o nome: ";
-    cin.clear();
-    cin >> nome;
+    limpaBuffer();
+    getline(cin, nome);
     c.setNome(nome);
 
     cout << "\n\tDigite o CPF: ";
-    cin.clear();
-    cin >> cpf;
+    getline(cin, cpf);
     c.setCpf(cpf);
 
     cout << "\n\tDigite o endereco: ";
-    cin.clear();
-    cin >> endereco;
+    getline(cin, endereco);
     c.setEndereco(endereco);
 
     cout << "\n\tDigite o telefone: ";
-    cin.clear();
-    cin >> telefone;
+    getline(cin, telefone);
     c.setTelefone(telefone);
 
     cout << "\n\tDigite o e-mail: ";
-    cin.clear();
-    cin >> email;
+    getline(cin, email);
     c.setEmail(email);
 
     c.create();
@@ -49,69 +42,170 @@ void Interfaces::cadastrarCliente() {
 }
 
 void Interfaces::cadastrarEspetaculo() {
+    Espetaculo e;
+    string titulo, descricao, diretor, elenco, dataHora;
+    float precoBilhete;
+
+    cout << "\nCadastro Espetaculo" << endl;
+
+    cout << "\n\tDigite o titulo: " << endl;
+    limpaBuffer();
+    getline(cin, titulo);
+    e.setTitulo(titulo);
+
+    cout << "\n\tDigite a descricao: " << endl;
+    getline(cin, descricao);
+    e.setDescricao(descricao);
+
+    cout << "\n\tDigite o diretor: " << endl;
+    getline(cin, diretor);
+    e.setDiretor(diretor);
+
+    cout << "\n\tDigite o elenco (separe por virgulas): " << endl;
+    getline(cin, elenco);
+    e.setElenco(elenco);
+
+    cout << "\n\tDigite o preco do bilhete: " << endl;
+    scanf("%f", &precoBilhete);
+    e.setPrecoBilhete(precoBilhete);
+
+    cout << "\n\tDigite a data e a hora (formato dd/mm/aaaa hh:mm:ss) : " << endl;
+    limpaBuffer();
+    getline(cin, dataHora);
+    TypeConverter tc;
+    e.setDataHorario(tc.convertStringToTime(dataHora));
+
+    e.create();
 }
 
 void Interfaces::cadastrarBilhete() {
 }
 
 void Interfaces::editarCliente() {
-    
     Cliente c;
     int id;
-    
+    string nome, telefone, endereco, email, cpf;
+
     cout << "ID do Cliente: ";
     cin.clear();
     cin >> id;
-    c.setId(id);
-    //---------
-    
-    unsigned char isDir = 0x4;
-    unsigned char isFile = 0x8;
 
-    DIR *dir = opendir("arquivos/");
-    struct dirent *entrada;
-    string cliente;
-    
-    
-    cliente = "Cliente_.txt";
-    
-    while(entrada = readdir(dir))
-    {
-        if(entrada->d_type == isFile)
-        {
-            cout <<entrada->d_name;
-        }
-    }
-    
-    
-    closedir(dir);
+    c.setId(id);
+    c.show();
+
+    cout << "Alteracao do Cliente - ID: " << c.getId() << endl;
+
+    cout << "\n\tDigite o nome: ";
+    limpaBuffer();
+    getline(cin, nome);
+    c.setNome(nome);
+
+    cout << "\n\tDigite o CPF: ";
+    getline(cin, cpf);
+    c.setCpf(cpf);
+
+    cout << "\n\tDigite o endereco: ";
+    getline(cin, endereco);
+    c.setEndereco(endereco);
+
+    cout << "\n\tDigite o telefone: ";
+    getline(cin, telefone);
+    c.setTelefone(telefone);
+
+    cout << "\n\tDigite o e-mail: ";
+    getline(cin, email);
+    c.setEmail(email);
+
+    c.update();
 }
 
 void Interfaces::editarEspetaculo() {
+    Espetaculo e;
+    int id;
+    string titulo, descricao, diretor, elenco, dataHora;
+    float precoBilhete;
+
+    cout << "ID do Espetaculo: ";
+    cin.clear();
+    cin >> id;
+
+    e.setId(id);
+    e.show();
+
+    if (e.getId() != -1) {
+
+        cout << "Alteracao do Espetaculo - ID: " << e.getId() << endl;
+
+        cout << "\n\tDigite o titulo: " << endl;
+        limpaBuffer();
+        getline(cin, titulo);
+        e.setTitulo(titulo);
+
+        cout << "\n\tDigite a descricao: " << endl;
+        getline(cin, descricao);
+        e.setDescricao(descricao);
+
+        cout << "\n\tDigite o diretor: " << endl;
+        getline(cin, diretor);
+        e.setDiretor(diretor);
+
+        cout << "\n\tDigite o elenco (separe por virgulas): " << endl;
+        getline(cin, elenco);
+        e.setElenco(elenco);
+
+        cout << "\n\tDigite o preco do bilhete: " << endl;
+        scanf("%f", &precoBilhete);
+        e.setPrecoBilhete(precoBilhete);
+
+        cout << "\n\tDigite a data e a hora (formato dd/mm/aaaa hh:mm:ss) : " << endl;
+        limpaBuffer();
+        getline(cin, dataHora);
+        TypeConverter tc;
+        e.setDataHorario(tc.convertStringToTime(dataHora));
+
+        e.update();
+    }
 }
 
 void Interfaces::editarBilhete() {
 }
 
 void Interfaces::excluirCliente() {
-    Cliente c2;
-    c2.setId(2);
-    c2.deleting();
+    Cliente c;
+    int id;
+
+    cout << "ID do Cliente: " << endl;
+    cin.clear();
+    cin >> id;
+
+    c.setId(id);
+    c.deleting();
+    limpaBuffer();
 }
 
 void Interfaces::excluirEspetaculo() {
+    Espetaculo e;
+    int id;
+
+    cout << "ID do Espetaculo: " << endl;
+    cin.clear();
+    cin >> id;
+
+    e.setId(id);
+    e.deleting();
+    limpaBuffer();
 }
 
 void Interfaces::excluirBilhete() {
 }
 
 void Interfaces::listarCliente() {
-    Cliente c2;
-    c2.setId(2);
-    c2.read();
-    cout << "\nNome: " << c2.getNome() << "\n";
-    cout << "\nSei la: " << c2.getCpf() << "\n";
-    
+    /* Cliente c2;
+     c2.setId(2);
+     c2.read();
+     cout << "\nNome: " << c2.getNome() << "\n";
+     cout << "\nSei la: " << c2.getCpf() << "\n";*/
+
 }
 
 void Interfaces::listarEspetaculo() {
@@ -126,3 +220,7 @@ Interfaces::Interfaces(const Interfaces& orig) {
 Interfaces::~Interfaces() {
 }
 
+void Interfaces::limpaBuffer() {
+    scanf("%*[^\n]");
+    scanf("%*c");
+}

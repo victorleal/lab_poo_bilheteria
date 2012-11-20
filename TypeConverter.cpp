@@ -40,14 +40,14 @@ time_t TypeConverter::convertStringToTime(string valor) {
     const char *c;
     c = valor.c_str();
     strptime(c, "%d/%m/%Y %k:%M:%S", &tm);
-    tm.tm_hour = tm.tm_hour + 1; //Horário de verão kkk
-    cout << "huera:" << tm.tm_hour;
-    cout << "\n\n";
+    tm.tm_hour = tm.tm_hour - 1;
     t = mktime(&tm);
     return t;
 }
 
 string TypeConverter::convertTimeToString(time_t valor) {
-    strftime(buffer, sizeof(buffer), "%d/%m/%Y %k:%M:%S", &tm);
-    return buffer;
+    struct tm * timeinfo = localtime(&valor);
+    strftime(buffer, sizeof(buffer), "%d/%m/%Y %H:%M:%S", timeinfo);
+    string str(buffer); 
+    return str;
 }

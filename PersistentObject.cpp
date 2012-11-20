@@ -12,7 +12,7 @@
 int PersistentObject::removeFile()//André 17/10/2012 ****
 {
     FileHandler fh(this->getFileName());
-    int retorno = fh.deleteFile();
+    return fh.deleteFile();
 }
 
 void PersistentObject::writeFile() {
@@ -34,13 +34,16 @@ void PersistentObject::unserialize() {
 
 void PersistentObject::create() {
     this->setId();
-    //FileHandler *fh = new FileHandler(this->getFileName());
     this->writeFile();
 }
 
 void PersistentObject::deleting() {
-    
-    this->removeFile();
+    int retorno = this->removeFile();
+    if (retorno == 0) {
+        cout << "Erro ao tentar excluir registro. Tente Novamente" << endl;
+    } else {
+        cout << "Registro excluido com sucesso!" << endl;
+    }
 }
 
 string PersistentObject::getField(int) {
@@ -62,18 +65,20 @@ int PersistentObject::getId() {
     return this->id;
 }
 
-void PersistentObject::read() {
+int PersistentObject::read() {
     FileHandler fh(this->getFileName());
     int a = fh.fileExists();
     if (a == 1) {
         this->serializedObject = fh.readFromFile();
         this->unserialize();
+        return 1;
     } else {
-        cout << " ai nao amigo" << endl;
+        perror("Registro nao encontrado");//cout << "Objeto nao encontrado" << endl;
+        return 0;
     }
 }
 
-void PersistentObject::read(int id) {
+int PersistentObject::read(int id) {
     this->setId(id);
     this->read();
 }
@@ -92,4 +97,6 @@ void PersistentObject::show() {
 }
 
 void PersistentObject::update() {
+    FileHandler *fh = new FileHandler(this->getFileName());
+    fh->writeToFile(this->serialize());
 }

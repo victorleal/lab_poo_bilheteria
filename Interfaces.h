@@ -11,6 +11,11 @@
 #include <iostream>
 #include <string>
 #include <sstream>
+#include <dirent.h>
+#include <stdio.h>
+#include "Cliente.h"
+#include "Espetaculo.h"
+#include "TypeConverter.h"
 
 using namespace std;
 
@@ -35,6 +40,7 @@ public:
 
     Interfaces(const Interfaces& orig);
     virtual ~Interfaces();
+    void limpaBuffer();
 private:
 
 };

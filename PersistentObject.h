@@ -39,8 +39,8 @@ public:
     string getField(int);
     string getFileName();
     int getId();
-    void read();
-    void read(int);
+    int read();
+    int read(int);
     void setId(int);
     void setId();
     virtual void show();

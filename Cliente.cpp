@@ -11,7 +11,6 @@
 
 Cliente::Cliente() {
     this->SEP = "|";
-    //this->create();
 }
 
 string Cliente::getClassName() {
@@ -30,20 +29,20 @@ string Cliente::serialize() {
     serialized += this->getEndereco() + this->SEP;
     serialized += this->getTelefone() + this->SEP;
     serialized += this->getEmail() + this->SEP;
-    
+
     return serialized;
 
 }
 
 void Cliente::unserialize() {
-    int aux[5];
     int cont = 0;
     int cont2 = 0;
     int cont3 = 0;
+
     char string[this->serializedObject.length()];
-    strcpy(string, this->serializedObject.c_str());
-    //string str = this->serializedObject;
     char recebe[5][25];
+
+    strcpy(string, this->serializedObject.c_str());
 
     for (cont = 0; cont < 5; cont++) {
         for (; string[cont2] != '|'; cont2++) {
@@ -104,6 +103,15 @@ void Cliente::setTelefone(string telefone) {
 }
 
 void Cliente::show() {
+    this->read();
 
+    cout << "Dados Cliente" << endl;
+    //Impressao dos dados na tela
+    cout << "ID: " << this->getId() << endl;
+    cout << "Nome: " << this->getNome() << endl;
+    cout << "CPF: " << this->getCpf() << endl;
+    cout << "Endereco: " << this->getEndereco() << endl;
+    cout << "Telefone: " << this->getTelefone() << endl;
+    cout << "Email: " << this->getEmail() << endl;
 }
 

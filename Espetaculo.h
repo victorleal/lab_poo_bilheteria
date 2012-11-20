@@ -8,8 +8,9 @@
 #ifndef ESPETACULO_H
 #define	ESPETACULO_H
 
-#include "PersistentObject.h"
 #include <time.h>
+#include "PersistentObject.h"
+#include "TypeConverter.h"
 
 class Espetaculo : public PersistentObject{
     
@@ -27,6 +28,7 @@ protected:
     void unserialize();
     
 public:
+    Espetaculo();
     time_t getDataHorario();
     string getDescricao();
     string getDiretor();
@@ -39,6 +41,7 @@ public:
     void setElenco(string);
     void setPrecoBilhete(float);
     void setTitulo(string);
+    void show();
     
 };
 
