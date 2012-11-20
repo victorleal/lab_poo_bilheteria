@@ -46,6 +46,10 @@ void Bilhete::setEspetaculo(Espetaculo espetaculo) {
     this->espetaculo = espetaculo;
 }
 
+void Bilhete::setCliente(Cliente cliente) {
+    this->cliente = cliente;
+}
+
 void Bilhete::setPagamento(Pagamento pagamento) {
     this->pagamento = pagamento;
 }

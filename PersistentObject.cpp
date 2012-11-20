@@ -55,8 +55,6 @@ string PersistentObject::getField(int field) {
 
     int campo = field - 1;
 
-    this->read();
-
     char string[this->serializedObject.length()];
     char recebe[25];
 
@@ -128,4 +126,16 @@ void PersistentObject::show() {
 void PersistentObject::update() {
     FileHandler *fh = new FileHandler(this->getFileName());
     fh->writeToFile(this->serialize());
+}
+
+void PersistentObject::listar(){
+    FileHandler fh;
+    string *objects = fh.listFiles(this->getClassName());
+    int cont = 0;
+    
+    while(objects[cont] != "\0"){
+        this->serializedObject = objects[cont];
+        cout << this->getField(1) << " - " << this->getField(2) << endl;
+        cont++;
+    }
 }

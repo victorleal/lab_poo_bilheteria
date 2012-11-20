@@ -7,6 +7,7 @@
 
 #include "Cliente.h"
 #include "FileHandler.h"
+#include "TypeConverter.h"
 #include <stdio.h>
 
 Cliente::Cliente() {
@@ -24,6 +25,7 @@ string Cliente::serialize() {
     stringstream str;
     str << this->getId();
 
+    serialized += str.str() + this->SEP;
     serialized += this->getNome() + this->SEP;
     serialized += this->getCpf() + this->SEP;
     serialized += this->getEndereco() + this->SEP;
@@ -38,13 +40,15 @@ void Cliente::unserialize() {
     int cont = 0;
     int cont2 = 0;
     int cont3 = 0;
+    
+    TypeConverter tc;
 
     char string[this->serializedObject.length()];
-    char recebe[5][25];
+    char recebe[6][25];
 
     strcpy(string, this->serializedObject.c_str());
 
-    for (cont = 0; cont < 5; cont++) {
+    for (cont = 0; cont < 6; cont++) {
         for (; string[cont2] != '|'; cont2++) {
             recebe[cont][cont3] = string[cont2];
             cont3++;
@@ -54,11 +58,12 @@ void Cliente::unserialize() {
         cont3 = 0;
     }
 
-    this->setNome(recebe[0]);
-    this->setCpf(recebe[1]);
-    this->setEndereco(recebe[2]);
-    this->setTelefone(recebe[3]);
-    this->setEmail(recebe[4]);
+    this->setId(tc.convertStringToInt(recebe[0]));
+    this->setNome(recebe[1]);
+    this->setCpf(recebe[2]);
+    this->setEndereco(recebe[3]);
+    this->setTelefone(recebe[4]);
+    this->setEmail(recebe[5]);
 
 }
 

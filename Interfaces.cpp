@@ -82,10 +82,30 @@ void Interfaces::cadastrarBilhete() {
     Bilhete b;
     Cliente c;
     Espetaculo e;
+    int idCliente, idEspetaculo;
     
     cout << "Cadastro Bilhete" << endl;
-    c.setId(9);
-    c.getField(5);
+    
+    cout << "Selecione o cliente: " << endl;
+    c.listar();
+    cout << "Id do Cliente: " << endl;
+    cin >> idCliente;
+    
+    cout << "Selecione o espetaculo: " << endl;
+    e.listar();
+    cout << "Id do Espetaculo: " << endl;
+    cin >> idCliente;
+    cout << "\n" << endl;
+    
+    c.setId(idCliente);
+    e.setId(idEspetaculo);
+    
+    c.read();
+    e.read();
+    
+    b.setCliente(c);
+    b.setEspetaculo(e);
+    
 }
 
 void Interfaces::editarCliente() {

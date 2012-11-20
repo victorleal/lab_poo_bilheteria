@@ -31,9 +31,10 @@ public:
     string getCodigoBilhete();
     Espetaculo getEspetaculo();
     Pagamento getPagamento();
-    void setCodigoBilhete(string codigoBilhete);
-    void setEspetaculo(Espetaculo espetaculo);
-    void setPagamento(Pagamento pagamento);
+    void setCodigoBilhete(string);
+    void setEspetaculo(Espetaculo);
+    void setCliente(Cliente);
+    void setPagamento(Pagamento);
     void show();
     
 };

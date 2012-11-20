@@ -45,7 +45,7 @@ string FileHandler::getNextId(string classe) {
     string conteudo = "";
     int nextId;
 
-    string name = "arquivos/id" + classe + ".txt";
+    string name = "arquivos/id/id" + classe + ".txt";
     ifstream fin(name.c_str());
 
     if (fin.is_open()) {
@@ -117,10 +117,10 @@ void FileHandler::writeToFile(string object) {
 }
 
 string* FileHandler::listFiles(string classe) {
-    string * files = new string[100];
+    string *objects = new string[100];
     int cont = 0;
     int cont2 = 0;
-    string aux[10];
+    char aux[10];
 
     unsigned char isFile = 0x8;
     DIR *dir = opendir("arquivos/");
@@ -128,18 +128,22 @@ string* FileHandler::listFiles(string classe) {
 
     while (entrada = readdir(dir)) {
         if (entrada->d_type == isFile) {
-            //Pega o nome do arquivo sem a id
+            //Pega o nome do arquivo sem a id (nome da classe)
             while (entrada->d_name[cont2] != '_') {
                 aux[cont2] = entrada->d_name[cont2];
                 cont2++;
             }
             //compara o nome
-            if (aux == classe) {
-                files[cont] = entrada->d_name;
+            if (strcmp(aux, classe.c_str()) == 0) {
+                this->setFileName(entrada->d_name);
+                objects[cont] = this->readFromFile();
+                cont++;
             }
+            cont2 = 0;
         }
-        cont++;
+
     }
-    files[cont] = "\0";
-    return files;
+    objects[cont] = "\0";
+    closedir(dir);
+    return objects;
 }

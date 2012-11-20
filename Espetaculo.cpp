@@ -39,13 +39,13 @@ void Espetaculo::unserialize() {
     int cont3 = 0;
 
     char string[this->serializedObject.length()];
-    char recebe[6][25];
+    char recebe[7][25];
 
     TypeConverter tc;
 
     strcpy(string, this->serializedObject.c_str());
 
-    for (cont = 0; cont < 6; cont++) {
+    for (cont = 0; cont < 7; cont++) {
         for (; string[cont2] != '|'; cont2++) {
             recebe[cont][cont3] = string[cont2];
             cont3++;
@@ -55,12 +55,13 @@ void Espetaculo::unserialize() {
         cont3 = 0;
     }
 
-    this->setTitulo(recebe[0]);
-    this->setDescricao(recebe[1]);
-    this->setDiretor(recebe[2]);
-    this->setElenco(recebe[3]);
-    this->setPrecoBilhete(tc.convertStringToFloat(recebe[4]));
-    this->setDataHorario(tc.convertStringToTime(recebe[5]));
+    this->setId(tc.convertStringToInt(recebe[0]));
+    this->setTitulo(recebe[1]);
+    this->setDescricao(recebe[2]);
+    this->setDiretor(recebe[3]);
+    this->setElenco(recebe[4]);
+    this->setPrecoBilhete(tc.convertStringToFloat(recebe[5]));
+    this->setDataHorario(tc.convertStringToTime(recebe[6]));
 }
 
 time_t Espetaculo::getDataHorario() {

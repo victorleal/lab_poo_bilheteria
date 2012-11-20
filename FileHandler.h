@@ -8,6 +8,7 @@
 #ifndef FILEHANDLER_H
 #define	FILEHANDLER_H
 
+#include <string.h>
 #include "PersistentObject.h"
 
 class FileHandler : public PersistentObject{
@@ -29,7 +30,7 @@ public:
     void writeToFile(string);
     void listFiles();
     string getNextId(string);
-    string *listFiles();
+    string *listFiles(string);
     
 };
 

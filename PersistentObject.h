@@ -45,6 +45,7 @@ public:
     void setId();
     virtual void show();
     void update();
+    void listar();
 
 };
 
