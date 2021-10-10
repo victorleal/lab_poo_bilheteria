@@ -1,7 +1,5 @@
-c_mais_mais
-===========
+## Sistema de Bilheteria (C++)
 
-Projeto C++ 
+Projeto escrito para Laboratório de Programação Orientada a Objetos, utilizando C++
 
-Controle de venda de bilhetes para espetáculos.
-Projeto finalizado.
+O projeto consiste na implementação de um sistema de controle de venda de bilhetes para espetáculos, com gerenciamento de arquivos (as transações eram realizadas com base em arquivos).
